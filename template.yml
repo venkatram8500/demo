@@ -58,3 +58,4 @@ spec:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
+        token: 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
