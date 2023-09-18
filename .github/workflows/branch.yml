@@ -8,8 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get current branch
-        run: echo "Current branch: ${{ github.ref }}"
+    
 
       - name: Create new branch
         run: git checkout -b new-branch
