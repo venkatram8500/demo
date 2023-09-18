@@ -21,6 +21,10 @@ jobs:
 
         cd demo
 
-        echo "changing to demo"
+        git checkout -b try1
+
+        git add .
+
+        
      
 
