@@ -1,0 +1,25 @@
+name: Create Branch Manually
+
+on:
+  workflow_dispatch: # This event allows manual triggering
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Create and push branch
+      run: |
+        # Replace BRANCH_NAME with the desired branch name
+        BRANCH_NAME="new-branch"
+
+        # Create a new branch
+        git checkout -b $BRANCH_NAME
+
+        # Push the branch to the repository
+        git push origin $BRANCH_NAME
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
