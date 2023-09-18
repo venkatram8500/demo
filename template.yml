@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: hello-world-template
-  title: Hello World
+  title: Demo Purpose
   description: Says Hello to a specified name.
 spec:
   owner: backstage/techdocs-core
