@@ -25,6 +25,8 @@ jobs:
 
         git add .
 
-        
+        git push --set-upstream origin try1
+
+
      
 
