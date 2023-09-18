@@ -18,7 +18,7 @@ spec:
         name:
           title: Name
           type: string
-          description: Unique name of the component name
+          description: Unique name of the component
           ui:autofocus: true
           ui:options:
             rows: 5
@@ -51,4 +51,10 @@ spec:
         targetPath: ./community
         url: https://github.com/backstage/community/tree/main/backstage-community-sessions
 
- 
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: This is ${{ parameters.name }}
+        repoUrl: ${{ parameters.repoUrl }}
