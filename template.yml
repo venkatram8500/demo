@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: hello-world-template
   title: Demo Purpose
-  description: Says Hello to a specified name.
+  description: Says welcome to a specified name.
 spec:
   owner: backstage/techdocs-core
   type: service
