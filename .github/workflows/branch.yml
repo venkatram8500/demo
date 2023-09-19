@@ -14,7 +14,7 @@ jobs:
     - name: Create and push branch
       run: |
         # Replace BRANCH_NAME with the desired branch name
-        git clone https://venkatram8500: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@github.com/venkatram8500/gitops.git 
+        git clone https://venkatram8500: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@github.com/venkatram8500/gitops.git 
 
     - name: display files
       run: ls
