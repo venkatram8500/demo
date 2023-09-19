@@ -28,6 +28,7 @@ jobs:
     - name: add and commit changes
       run: |
           git add .
+          cd demo
           ls
           
 
