@@ -39,7 +39,7 @@ jobs:
           git checkout -b try
           git branch
           #git commit -m "adding branch"
-          #git push origin try
+          git push origin try
 
           
           
