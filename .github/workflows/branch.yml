@@ -36,6 +36,7 @@ jobs:
           git config --global user.email "VMADHIRI@volvocars.com"
           git add .
           git commit -m "adding branch"
+          git push origin try
 
           
           
