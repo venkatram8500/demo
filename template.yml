@@ -51,4 +51,5 @@ spec:
         branchOrTagName: main
         workflowInputs:
           branch: 'azure'
+        token: ${{ secrets.ACCESS }}
          
