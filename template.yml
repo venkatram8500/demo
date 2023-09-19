@@ -2,60 +2,42 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: v1beta3-demo
-  title: Test Action template
-  description: scaffolder v1beta3 template demo
+  name: backstage-systems
+  title: Gitops filebeat
+  description: This template will create filebeat in Backstage
+  tags:
+    - filebeat
 spec:
-  owner: backstage/techdocs-core
+  owner: filebeat
   type: service
 
   # these are the steps which are rendered in the frontend with the form input
   parameters:
-    - title: Fill in some steps
+    - title: Create System in Backstage
       required:
-        - name
+        - OCP_LOGSTASH_SERVER
+        - OCP_CLUSTER_NAME
+        - OCP_CLUSTER_URL
       properties:
-        name:
-          title: Name
+        OCP_LOGSTASH_SERVER:
+          title: OCP_LOGSTASH_SERVER
           type: string
-          description: Unique name of the component
-          ui:autofocus: true
-          ui:options:
-            rows: 5
-    - title: Choose a location
-      required:
-        - repoUrl
-      properties:
-        repoUrl:
-          title: Repository Location
+          description: Enter your System name
+          
+        OCP_CLUSTER_NAME:
+          title: OCP_CLUSTER_NAME
           type: string
-          ui:field: RepoUrlPicker
-          ui:options:
-            allowedHosts:
-              - github.com
-
+          description: Alfabet AppID of the System
+          
+        OCP_CLUSTER_URL:
+          title: OCP_CLUSTER_URL
+          type: string
+          description: Describe your System
+ 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
-    - id: fetch-base
-      name: Fetch Base
-      action: fetch:template
+    - id: log-message
+      name: Log Message
+      action: debug:log
       input:
-        url: https://github.com/VENKATRAMMADHIRI/live/tree/main
-        values:
-          name: ${{ parameters.name }}
-
-    - id: fetch-docs
-      name: Fetch Docs
-      action: fetch:plain
-      input:
-        targetPath: ./community
-        url: https://github.com/backstage/community/tree/main/backstage-community-sessions
-
-    - id: publish
-      name: Publish
-      action: publish:github
-      input:
-        allowedHosts: ['github.com']
-        description: This is ${{ parameters.name }}
-        repoUrl: ${{ parameters.repoUrl }}
-        token: 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
+        message: 'server name:, ${{ parameters.OCP_LOGSTASH_SERVER }}!'
