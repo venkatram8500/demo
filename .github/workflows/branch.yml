@@ -9,39 +9,14 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: peterjgrainger/action-create-branch@v2.2.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        branch: 'release-notes'
+        
+    
 
-    - name: Create and push branch
-      run: |
-        # Replace BRANCH_NAME with the desired branch name
-        git clone https://venkatram8500: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@github.com/venkatram8500/gitops.git 
-
-    - name: display files
-      run: ls
-
-    - name: enter demo directory
-      run: cd demo
-
-    - name: create branch 
-      run: git checkout -b try
-
-    - name: show branches
-      run: git branch
-
-    - name: add and commit changes
-      run: |
-          cd demo
-          ls
-          git config --global user.name "venkatram8500"
-          git config --global user.email "VMADHIRI@volvocars.com"
-          git add .
-          git remote -v
-          git checkout -b try
-          git branch
-          #git commit -m "adding branch"
-          git push https://venkatram8500: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@github.com/venkatram8500/gitops.git --all
-
-          
           
           
 
