@@ -8,13 +8,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: peterjgrainger/action-create-branch@v2.2.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.ACCESS }}
-      with:
-        branch: 'release-notes'
-        
+        - name: Checkout code
+          uses: peterjgrainger/action-create-branch@v2.2.0
+          env:
+            GITHUB_TOKEN: ${{ secrets.ACCESS }}
+          with:
+            branch: 'release-notes'
+
+          
     
 
           
