@@ -49,8 +49,8 @@ spec:
         repoUrl: 'github.com?repo=demo11&owner=venkatram8500'
         workflowId: branch.yml
         branchOrTagName: main
-        token: "${{ secrets.ACCESS }}"
         workflowInputs:
           branch: 'azure'
+          token: ${{ secrets.ACCESS }}
         
          
