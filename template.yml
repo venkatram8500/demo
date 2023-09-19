@@ -40,7 +40,7 @@ spec:
       name: Log Message
       action: debug:log
       input:
-        message: 'server name:, ${{ parameters.OCP_LOGSTASH_SERVER }}!'
+        message: 'server name is :, ${{ parameters.OCP_LOGSTASH_SERVER }}!'
 
     - id: trigger-workflow
       name: trigger workflow
@@ -51,6 +51,6 @@ spec:
         branchOrTagName: main
         workflowInputs:
           branch: 'azure'
-          token: ${{ secrets.ACCESS }}
+        token: ${{ secrets.ACCESS }}
         
          
