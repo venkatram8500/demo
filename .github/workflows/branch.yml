@@ -23,13 +23,17 @@ jobs:
       run: cd demo
 
     - name: create branch 
-      run : git checkout -b try
+      run: git checkout -b try
+
+    - name: show branches
+      run: git branch
 
     - name: add and commit changes
       run: |
-          git add .
           cd demo
           ls
+          git add .
+          git commit -m ""
           
 
    
