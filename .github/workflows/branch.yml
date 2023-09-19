@@ -19,6 +19,17 @@ jobs:
     - name: display files
       run: ls
 
+    - name: enter demo directory
+      run: cd demo
+
+    - name: create branch 
+      run : git checkout -b try
+
+    - name: add and commit changes
+      run: |
+          git add .
+          
+
    
 
      
