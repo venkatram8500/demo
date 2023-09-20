@@ -13,7 +13,7 @@ spec:
 
   # these are the steps which are rendered in the frontend with the form input
   parameters:
-    - title: Fill all the details
+    - title: Provide Needed Information
       required:
         - OCP_LOGSTASH_SERVER
         - OCP_CLUSTER_NAME
