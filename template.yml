@@ -13,7 +13,7 @@ spec:
 
   # these are the steps which are rendered in the frontend with the form input
   parameters:
-    - title: Create System in Backstage
+    - title: Fill all the details
       required:
         - OCP_LOGSTASH_SERVER
         - OCP_CLUSTER_NAME
