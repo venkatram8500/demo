@@ -46,7 +46,7 @@ spec:
       name: trigger workflow
       action: github:actions:dispatch
       input:
-        repoUrl: 'github.com?repo=demo&owner=venkatram8500'
+        repoUrl: 'github.com?repo=testing1&owner=volvo-cars'
         workflowId: branch.yml
         branchOrTagName: main
         token: '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'
