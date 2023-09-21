@@ -49,7 +49,9 @@ spec:
         repoUrl: 'github.com?repo=demo&owner=venkatram8500'
         workflowId: branch.yml
         branchOrTagName: main
-        token: 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
+        token: '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'
+        workflowInputs:
+          branch: 'new-branch'
         
           
         
