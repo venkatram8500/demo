@@ -22,17 +22,17 @@ spec:
         OCP_LOGSTASH_SERVER:
           title: OCP_LOGSTASH_SERVER
           type: string
-          description: Enter your System name
+          description: Enter your OCP_LOGSTASH_SERVER
           
         OCP_CLUSTER_NAME:
           title: OCP_CLUSTER_NAME
           type: string
-          description: Alfabet AppID of the System
+          description: Enter your OCP_CLUSTER_NAME
           
         OCP_CLUSTER_URL:
           title: OCP_CLUSTER_URL
           type: string
-          description: Describe your System
+          description: Enter your OCP_CLUSTER_URL
  
   # here's the steps that are executed in series in the scaffolder backend
   steps:
@@ -40,7 +40,7 @@ spec:
       name: Log Message
       action: debug:log
       input:
-        message: 'server name is:, ${{ parameters.OCP_LOGSTASH_SERVER }}!'
+        message: 'OCP_LOGSTASH_SERVER name you entered:, ${{ parameters.OCP_LOGSTASH_SERVER }}!'
 
     - id: trigger-workflow
       name: trigger workflow
