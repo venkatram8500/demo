@@ -23,7 +23,7 @@ spec:
           title: OCP_LOGSTASH_SERVER
           type: string
           description: Select OCP_LOGSTASH_SERVER
-          default: dev
+          default: Dev_ocpplatform.logstash-logs.volvocars.net:5045
           enum:
             - Dev_ocpplatform.logstash-logs.volvocars.net:5045
             - Prod_ocpplatform.logstash-logs.volvocars.net:5045
@@ -36,7 +36,16 @@ spec:
         OCP_CLUSTER_NAME:
           title: OCP_CLUSTER_NAME
           type: string
-          description: Enter your OCP_CLUSTER_NAME
+          description: Select OCP_CLUSTER_NAME
+          default: sandbox-net
+          enum:
+            - sandbox-net
+            - rnd-net
+            - test-net
+          enumNames:
+            - 'sandbox-net'
+            - 'rnd-net'
+            - 'test-net'
           
         OCP_CLUSTER_URL:
           title: OCP_CLUSTER_URL
