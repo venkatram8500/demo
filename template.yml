@@ -22,7 +22,16 @@ spec:
         OCP_LOGSTASH_SERVER:
           title: OCP_LOGSTASH_SERVER
           type: string
-          description: Enter your OCP_LOGSTASH_SERVER
+          description: Select OCP_LOGSTASH_SERVER
+          default: dev
+          enum:
+            - Dev_ocpplatform.logstash-logs.volvocars.net:5045
+            - Prod_ocpplatform.logstash-logs.volvocars.net:5045
+            - Test_ocpplatform.logstash-logs.volvocars.net:5045
+          enumNames:
+            - 'Dev_ocpplatform.logstash-logs.volvocars.net:5045'
+            - 'Prod_ocpplatform.logstash-logs.volvocars.net:5045'
+            - 'Test_ocpplatform.logstash-logs.volvocars.net:5045'
           
         OCP_CLUSTER_NAME:
           title: OCP_CLUSTER_NAME
