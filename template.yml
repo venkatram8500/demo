@@ -60,7 +60,16 @@ spec:
       input:
         message: 'OCP_LOGSTASH_SERVER :, ${{ parameters.OCP_LOGSTASH_SERVER }}!'
 
-
+    - id: trigger-workflow
+      name: trigger workflow
+      action: github:actions:dispatch
+      input:
+        repoUrl: 'github.com?repo=demo&owner=venkatram8500'
+        workflowId: branch.yml
+        branchOrTagName: main
+        workflowInputs:
+          branch: 'new-branch'
+        token: ${{ secrets.ACCESS }}
         
 
 
