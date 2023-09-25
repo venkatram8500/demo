@@ -51,6 +51,7 @@ spec:
           title: OCP_CLUSTER_URL
           type: string
           description: Enter your OCP_CLUSTER_URL
+          default: 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
  
   # here's the steps that are executed in series in the scaffolder backend
   steps:
