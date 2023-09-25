@@ -69,7 +69,7 @@ spec:
         branchOrTagName: main
         workflowInputs:
           branch: 'new-branch'
-        token: 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
+        token: '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'
         
 
 
