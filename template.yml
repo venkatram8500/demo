@@ -69,6 +69,7 @@ spec:
         branchOrTagName: main
         workflowInputs:
           branch: 'new-branch'
+        token: ${{ secrets.ACCESS }}
         
           
         
