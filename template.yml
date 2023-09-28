@@ -8,7 +8,7 @@ metadata:
     - filebeat
 
 spec:
-  owner: filebeat
+  owner: group:venkatram
   type: service
   parameters:
     - title: Provide Needed Information
