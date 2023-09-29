@@ -88,8 +88,8 @@ spec:
       input:
         message: 'OCP_LOGSTASH_SERVER :, ${{ parameters.OCP_LOGSTASH_SERVER }}!'
 
-    - id: trigger-workflow
-      name: trigger workflow
+    - id: trigger-newbranch action
+      name: trigger-newbranch workflow
       action: github:actions:dispatch
       input:
         repoUrl: 'github.com?repo=demo&owner=venkatram8500'
@@ -97,6 +97,17 @@ spec:
         branchOrTagName: main
         workflowInputs:
           branch: 'new-branch'
+        token: ${{ parameters.AccessToken }}
+
+    - id: trigger-updatefile action
+      name: trigger-updatefile workflow
+      action: github:actions:dispatch
+      input:
+        repoUrl: 'github.com?repo=demo&owner=venkatram8500'
+        workflowId: Updatefile.yml
+        branchOrTagName: main
+        workflowInputs:
+          clustername: 'rnd-net'
         token: ${{ parameters.AccessToken }}
       
 
