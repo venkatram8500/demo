@@ -101,13 +101,14 @@ spec:
 
     - id: trigger-updatefile action
       name: trigger-updatefile workflow
+      if: ${{ parameters.OCP_LOGSTASH_SERVER === "Dev_ocpplatform.logstash-logs.volvocars.net:5045" }}
       action: github:actions:dispatch
       input:
         repoUrl: 'github.com?repo=demo&owner=venkatram8500'
         workflowId: Updatefile.yml
         branchOrTagName: main
         workflowInputs:
-          clustername: 'rnd-net'
+          clustername: ${{ parameters.OCP_CLUSTER_NAME1 }}
         token: ${{ parameters.AccessToken }}
         
   output:
