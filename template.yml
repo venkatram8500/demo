@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: backstage-systems
   title: Gitops filebeat
-  description: This template will create filebeat in Backstage
+  description: Demo Backstage Template
   tags:
     - filebeat
 
