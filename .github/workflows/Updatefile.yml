@@ -9,5 +9,5 @@ jobs:
       - uses: wow-actions/update-file@v1
         with:
           GITHUB_TOKEN: ${{ secrets.ACCESS }}
-          path: README.md
+          path: configmap.yml
           content: 'Updated by update-file action'
