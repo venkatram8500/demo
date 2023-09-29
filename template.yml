@@ -26,6 +26,11 @@ spec:
             - Prod_ocpplatform.logstash-logs.volvocars.net:5045
             - Test_ocpplatform.logstash-logs.volvocars.net:5045
 
+        AccessToken:
+          title: Github Access Token
+          type: string
+          description: Provide the Github Access Token
+
       
       dependencies:
         OCP_LOGSTASH_SERVER:
@@ -37,12 +42,12 @@ spec:
                   title: OCP_CLUSTER_NAME
                   type: string
                   description: Select OCP_CLUSTER_NAME
-                  default: test-net
+                  default: sandbox-net
                 OCP_CLUSTER_URL1:
                   title: OCP_CLUSTER_URL
                   type: string
                   description: Enter your OCP_CLUSTER_URL
-                  default: my cluster
+                  default: sandbox.volvocars.net
 
             - properties:
                 OCP_LOGSTASH_SERVER:
@@ -51,12 +56,12 @@ spec:
                   title: OCP_CLUSTER_NAME
                   type: string
                   description: Select OCP_CLUSTER_NAME
-                  default: try-net
+                  default: prod-net
                 OCP_CLUSTER_URL2:
                   title: OCP_CLUSTER_URL
                   type: string
                   description: Enter your OCP_CLUSTER_URL
-                  default: our cluster
+                  default: prod.volvocars.net
 
 
             - properties:
@@ -66,35 +71,32 @@ spec:
                   title: OCP_CLUSTER_NAME
                   type: string
                   description: Select OCP_CLUSTER_NAME
-                  default: try-net
+                  default: rnd-net
                 OCP_CLUSTER_URL3:
                   title: OCP_CLUSTER_URL
                   type: string
                   description: Enter your OCP_CLUSTER_URL
-                  default: our cluster
+                  default: rnd.volvocars.net
+                  
+
 
 
   steps:
-    - id: for dev
-      name: Create Contact Point dev
-      if: ${{ parameters.OCP_LOGSTASH_SERVER === "Dev_ocpplatform.logstash-logs.volvocars.net:5045" }}
+    - id: log-message
+      name: Log Message
       action: debug:log
       input:
-        message: 'selected Dev_ocpplatform.logstash-logs.volvocars.net:5045'
-      
+        message: 'OCP_LOGSTASH_SERVER :, ${{ parameters.OCP_LOGSTASH_SERVER }}!'
 
-    - id: for prod
-      name: Create Contact Point prod
-      if: ${{ parameters.OCP_LOGSTASH_SERVER === "Prod_ocpplatform.logstash-logs.volvocars.net:5045" }}
-      action: debug:log
+    - id: trigger-workflow
+      name: trigger workflow
+      action: github:actions:dispatch
       input:
-        message: 'selected Prod_ocpplatform.logstash-logs.volvocars.net:5045'
-
-    - id: for test
-      name: Create Contact Point test
-      if: ${{ parameters.OCP_LOGSTASH_SERVER === "Test_ocpplatform.logstash-logs.volvocars.net:5045" }}
-      action: debug:log
-      input:
-        message: 'selected Test_ocpplatform.logstash-logs.volvocars.net:5045'
+        repoUrl: 'github.com?repo=demo&owner=venkatram8500'
+        workflowId: branch.yml
+        branchOrTagName: main
+        workflowInputs:
+          branch: 'new-branch'
+        token: ${{ parameters.AccessToken }}
       
 
