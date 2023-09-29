@@ -1,6 +1,11 @@
 name: Update File
 on:
     workflow_dispatch: 
+    inputs:
+      branch:
+        description: "Cloud provider AWS/Azure"
+        required: true
+        type: string
 
 jobs:
   run:
