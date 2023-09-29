@@ -1,5 +1,3 @@
-<!-- [START AUTO UPDATE] -->
-<!-- Please keep comment here to allow auto-update -->
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -10,4 +8,4 @@ data:
   OCP_LOGSTASH_SERVER: ocpplatform.logstash-logs.volvocars.net:5045
   OCP_CLUSTER_NAME: sandbox-net
   OCP_CLUSTER_URL: "https://console-openshift-console.apps.sandbox-net.sandbox.volvocars.net"
-<!-- [END AUTO UPDATE] -->
+
