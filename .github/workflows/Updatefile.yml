@@ -1,5 +1,6 @@
 name: Update File
 on:
+    workflow_dispatch: 
 
 jobs:
   run:
@@ -7,6 +8,6 @@ jobs:
     steps:
       - uses: wow-actions/update-file@v1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS }}
           path: README.md
           content: 'Updated by update-file action'
