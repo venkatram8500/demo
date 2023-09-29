@@ -109,5 +109,10 @@ spec:
         workflowInputs:
           clustername: 'rnd-net'
         token: ${{ parameters.AccessToken }}
-      
+        
+  output:
+    links:
+      - title: Github Actions 
+        url: https://github.com/venkatram8500/demo/actions/workflows
+        
 
