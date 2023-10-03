@@ -1,21 +1,19 @@
-name: Update Main Branch
+name: Create branch and run action manually
 
 on:
   workflow_dispatch:
 
 jobs:
-  update-main-branch:
+  create-branch-and-run-action:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-
-      - name: Change branch to master
-        run: git branch -m main new-branch
-
-      - name: Push changes to master
+      - name: Create branch
         run: |
-          git push origin master
+          git checkout -b new-branch
+          git push -u origin new-branch
 
-     
+      - name: Run action
+        run: |
+          # Replace this step with the action you want to run.
+          echo "Hello, world!"
