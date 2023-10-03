@@ -12,7 +12,7 @@ jobs:
           uses: jaywcjlove/github-action-modify-file-content@main
           with:
             branch: new-branch
-            path: new-branch/README.md
+            path: README.md
             body: "{{date:YYYY-MM-DD HH:mm:ss}}"
             overwrite: 'true'
             token: ${{ secrets.ACCESS }}
