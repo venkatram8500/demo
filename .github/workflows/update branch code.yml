@@ -1,1 +1,21 @@
+name: Update Main Branch
 
+on:
+
+
+jobs:
+  update-main-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Change branch to master
+        run: git branch -m main new-branch
+
+      - name: Push changes to master
+        run: |
+          git push origin master
+
+     
