@@ -12,7 +12,7 @@ jobs:
           uses: jaywcjlove/github-action-modify-file-content@main
           with:
             branch: new-branch
-            path: test/overwrite.file.md
+            path: new-branch/README.md
             body: "{{date:YYYY-MM-DD HH:mm:ss}}"
             overwrite: 'true'
         
