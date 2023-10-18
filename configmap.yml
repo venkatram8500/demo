@@ -1,5 +1,5 @@
-#<!-- [START AUTO UPDATE] -->
-#<!-- Please keep comment here to allow auto-update -->
+<!-- [START AUTO UPDATE] -->
+<!-- Please keep comment here to allow auto-update -->
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -8,6 +8,6 @@ metadata:
 data:
   FILEBEAT_NAMESPACE: ocp-logging        
   OCP_LOGSTASH_SERVER: ocpplatform.logstash-logs.volvocars.net:5045
-  OCP_CLUSTER_NAME: 'test1'
+  OCP_CLUSTER_NAME: 'venkat'
   OCP_CLUSTER_URL: "https://console-openshift-console.apps.sandbox-net.sandbox.volvocars.net"
-#<!-- [END AUTO UPDATE] -->
+<!-- [END AUTO UPDATE] -->
