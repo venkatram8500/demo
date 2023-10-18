@@ -11,5 +11,5 @@ jobs:
    
     - uses: rmeneely/update-yaml@v1
       with:
-        infile: configmap.yaml
+        infile: configmap.yml
         varlist: 'kind=try'
