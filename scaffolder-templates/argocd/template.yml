@@ -1,0 +1,54 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  description: This will Install argocd in cluster.
+  name: argocd installation in a cluster
+  tags:
+    - argocd
+  title: Install argocd in a cluster
+spec:
+  output:
+    links:
+      - title: Github Action
+        url: https://github.com/volvo-cars/openshift-gitops/actions/workflows/action1.yml
+  owner: group:venkatram
+  parameters:
+    - properties:
+        OCP_CLUSTER_NAME:
+          description: provide the cluster name where to install argocd.
+          title: CLUSTER_NAME
+          type: string
+        ARGOCD_NAMESPACE:
+          description: provide the argocd namespace.
+          title: ARGOCD_NAMESPACE
+          type: string
+        AccessToken:
+          title: Github Access Token
+          type: string
+          description: Provide the Github Access Token
+          
+
+      required:
+        - OCP_CLUSTER_NAME
+        - ARGOCD_NAMESPACE
+        - AccessToken
+
+      title: Please Provide the Needed Information
+  steps:
+    - action: github:actions:dispatch
+      id: dispatch
+      input:
+        branchOrTagName: 'master'
+        repoUrl: 'github.com?repo=openshift-gitops&owner=volvo-cars'
+        workflowId: 'action1.yml'
+        workflowInputs:
+          argonamespace: ${{ parameters.OCP_CLUSTER_NAME}}
+        token: ${{ parameters.AccessToken }}
+      name: Run workflow
+    - action: debug:log
+      id: log
+      input:
+        message: "A GitHub action is triggered for creating/updating the argocd: https://github.com/volvo-cars/openshift-gitops/actions/workflows/action1.yml"
+      name: Log output
+      needs: dispatch
+  type: service
