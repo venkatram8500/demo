@@ -8,12 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-        - name: Modify test test/overwrite.file.md
-          uses: jaywcjlove/github-action-modify-file-content@main
-          with:
-            branch: new-branch
-            path: README.md
-            body: "{{date:YYYY-MM-DD HH:mm:ss}}"
-            overwrite: 'true'
-            token: ${{ secrets.ACCESS }}
-        
+   
+    - uses: rmeneely/update-yaml@v1
+      with:
+        infile: configmap.yaml
+        varlist: 'kind=try'
